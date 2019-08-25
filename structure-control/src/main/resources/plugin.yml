@@ -1,0 +1,11 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: ${project.author}
+main: de.derfrzocker.structure.control.StructureControl
+api-version: "1.13"
+load: STARTUP
+commands:
+  structurecontrol:
+    permission: "structure.control"
+    aliases: [strcontrol]
