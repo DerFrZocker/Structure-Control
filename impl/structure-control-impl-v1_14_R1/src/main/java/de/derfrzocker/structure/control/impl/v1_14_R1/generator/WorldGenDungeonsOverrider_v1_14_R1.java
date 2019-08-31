@@ -97,8 +97,8 @@ public class WorldGenDungeonsOverrider_v1_14_R1 extends WorldGenDungeons {
                 }
             }
         }
-        for (int maxChests = 0; maxChests < 2; ++maxChests) {
-            for (int triesPerChest = 0; triesPerChest < 3; ++triesPerChest) {
+        for (int maxChests = 0; maxChests < (int) service.getValue(structure, Setting.getSetting("CHESTS", SettingType.INTEGER), worldStructureConfig, biome); ++maxChests) {
+            for (int triesPerChest = 0; triesPerChest < (int) service.getValue(structure, Setting.getSetting("CHESTS_TRIES", SettingType.INTEGER), worldStructureConfig, biome); ++triesPerChest) {
                 final int x = blockPosition.getX() + random.nextInt(xSize * 2 + 1) - xSize;
                 final int y = blockPosition.getY();
                 final int z = blockPosition.getZ() + random.nextInt(zSize * 2 + 1) - zSize;
@@ -112,7 +112,7 @@ public class WorldGenDungeonsOverrider_v1_14_R1 extends WorldGenDungeons {
                     }
                     if (solidBlocks == 1) {
                         generatorAccess.setTypeAndData(chestPosition, StructurePiece.a(generatorAccess, chestPosition, Blocks.CHEST.getBlockData()), 2);
-                        TileEntityLootable.a((IBlockAccess) generatorAccess, random, chestPosition, LootTables.d);
+                        TileEntityLootable.a(generatorAccess, random, chestPosition, LootTables.d);
                         break;
                     }
                 }

@@ -25,6 +25,8 @@ public class MonsterRoom implements Structure {
         settings.add(Setting.getSetting("HEIGHT_RANGE", SettingType.INTEGER));
         settings.add(Setting.getSetting("MINIMUM_HEIGHT", SettingType.INTEGER));
         settings.add(Setting.getSetting("TRIES_PER_CHUNK", SettingType.INTEGER));
+        settings.add(Setting.getSetting("CHESTS", SettingType.INTEGER));
+        settings.add(Setting.getSetting("CHESTS_TRIES", SettingType.INTEGER));
         settings.add(Setting.getSetting("SKELETON_ENTRIES", SettingType.INTEGER));
         settings.add(Setting.getSetting("ZOMBIE_ENTRIES", SettingType.INTEGER));
         settings.add(Setting.getSetting("SPIDER_ENTRIES", SettingType.INTEGER));
